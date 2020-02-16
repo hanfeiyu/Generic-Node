@@ -1,0 +1,11 @@
+genericNode/UDPClient.class
+genericNode/RMIServer.class
+genericNode/TCPServer.class
+genericNode/StoreService.class
+genericNode/TCPClient.class
+genericNode/Main.class
+genericNode/RMIClient.class
+genericNode/UDPServer.class
+genericNode/Server.class
+genericNode/InterfaceStoreService.class
+genericNode/Client.class
