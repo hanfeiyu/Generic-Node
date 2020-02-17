@@ -32,6 +32,8 @@
 │   └── target
 └── tcss558_assignment_1_performance.pdf
 
+8 directories, 4 files
+
 # Usage
 >Simply run `./config.sh` to start testing
 >
