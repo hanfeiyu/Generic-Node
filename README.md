@@ -1,20 +1,20 @@
 # Devlopment Environment
->## Language
+## Language
 >Java
 
->## Language version
+## Language version
 >java 11.0.6 2020-01-14 LTS
 
->## IDE
+## IDE
 >Eclipse 2019-12
 
->## Package tool
+## Package tool
 >Maven 4.0.0
 
->## Development OS 
+## Development OS 
 >Mac
 
->## Testing OS 
+## Testing OS 
 >Ubuntu 18.04 on VirtualBox
 
 # Architecture
