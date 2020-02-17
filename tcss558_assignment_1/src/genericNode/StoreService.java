@@ -12,7 +12,7 @@ public class StoreService extends UnicastRemoteObject implements InterfaceStoreS
 	 */
 	private static final long serialVersionUID = -853230389874314930L;
 	private static boolean isShutDown = false;
-	private static Hashtable<String, String> store = new Hashtable<String, String>();
+	private static Hashtable<String, String> store = Server.getStore();
 	
 	protected StoreService() throws RemoteException {
 		super();

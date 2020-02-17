@@ -17,6 +17,11 @@ public abstract class Server {
 		this.portNum = portNum;
 	}
 	
+	// Expose store
+	public static Hashtable<String, String> getStore() {
+		return store;
+	}
+	
 	// Put function
 	public String put(String key, String value) {
 		String putResponse = null;
