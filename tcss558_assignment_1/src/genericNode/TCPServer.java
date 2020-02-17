@@ -53,6 +53,9 @@ public class TCPServer extends Server {
 		    // Close serverSocket
 		    serverSocket.close();
 		    
+		    // Exit
+		    System.exit(0);
+		    
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

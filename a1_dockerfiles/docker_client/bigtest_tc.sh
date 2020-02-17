@@ -1,4 +1,4 @@
-server=172.17.0.3
+server=$1
 port=1234
 java -jar GenericNode.jar tc $server $port put mD7 booLeejae8ne0lahgoos
 java -jar GenericNode.jar tc $server $port put 1VB ahghukooy8ooYi7eeChe

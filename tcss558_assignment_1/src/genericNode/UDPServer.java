@@ -41,6 +41,10 @@ public class UDPServer extends Server{
 				// Close utilities
 				socket.close();
 			}
+			
+			// Exit
+			System.exit(0);
+			
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

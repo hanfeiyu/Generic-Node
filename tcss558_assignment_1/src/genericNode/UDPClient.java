@@ -35,6 +35,7 @@ public class UDPClient extends Client {
 			
 			// Close utilities
 			socket.close();
+			
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

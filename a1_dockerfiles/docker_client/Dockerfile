@@ -1,4 +1,5 @@
 FROM ubuntu
+ENV HOSTNAME tcss558client
 RUN apt-get update
 RUN apt-get install -y default-jre 
 RUN apt-get install -y net-tools

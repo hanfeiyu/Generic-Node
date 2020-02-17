@@ -28,6 +28,7 @@ public class RMIClient extends Client {
 			// Call store service
 			String response = storeService.operate(operationInfo);
 			System.out.println(response);
+			
 		} catch (RemoteException | NotBoundException e) {
 			e.printStackTrace();
 		}
