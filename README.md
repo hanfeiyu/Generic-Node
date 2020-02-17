@@ -18,19 +18,19 @@
 >Ubuntu 18.04 on VirtualBox
 
 # Architecture
->.
->├── README.md
->├── a1_dockerfiles
->│   ├── docker_client
->│   └── docker_server
->├── config.sh
->├── tcss558_assignment_1
->│   ├── bin
->│   ├── localTest
->│   ├── pom.xml
->│   ├── src
->│   └── target
->└── tcss558_assignment_1_performance.pdf
+.
+├── README.md
+├── a1_dockerfiles
+│   ├── docker_client
+│   └── docker_server
+├── config.sh
+├── tcss558_assignment_1
+│   ├── bin
+│   ├── localTest
+│   ├── pom.xml
+│   ├── src
+│   └── target
+└── tcss558_assignment_1_performance.pdf
 
 # Usage
 >Simply run `./config.sh` to start testing
@@ -43,9 +43,9 @@
 >Use `ifconfig` to obtain IP address
 >
 >In the client terminal:
->Use `./bigtest_tc.sh <TCP IP address>" to run big test of TCP
->Use `./bigtest_uc.sh <UDP IP address>" to run big test of UDP
->Use `./bigtest_rc.sh <RMI IP address>" to run big test of RMI
+>Use `./bigtest_tc.sh <TCP IP address>` to run big test of TCP
+>Use `./bigtest_uc.sh <UDP IP address>` to run big test of UDP
+>Use `./bigtest_rc.sh <RMI IP address>` to run big test of RMI
 >
 ## For other OSs
 >After the configuration finished, you should have 4 containers runing for
@@ -57,9 +57,9 @@
 >Use `ifconfig` to obtain IP address
 >
 >In the client terminal:
->Use `./bigtest_tc.sh <TCP IP address>" to run big test of TCP
->Use `./bigtest_uc.sh <UDP IP address>" to run big test of UDP
->Use `./bigtest_rc.sh <RMI IP address>" to run big test of RMI
+>Use `./bigtest_tc.sh <TCP IP address>` to run big test of TCP
+>Use `./bigtest_uc.sh <UDP IP address>` to run big test of UDP
+>Use `./bigtest_rc.sh <RMI IP address>` to run big test of RMI
 >
 
 
