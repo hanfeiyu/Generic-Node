@@ -18,9 +18,9 @@
   - Ubuntu 18.04 on VirtualBox
 
 # Architecture
-.  
-├── README.md   
-├── a1_dockerfiles   
+.<br />
+├── README.md<br />
+├── a1_dockerfiles<br />
 │   ├── docker_client   
 │   └── docker_server   
 ├── config.sh   
@@ -62,4 +62,7 @@ client and ts/us/rmis servers
     - Use `./bigtest_tc.sh <TCP IP address>` to run big test of TCP
     - Use `./bigtest_uc.sh <UDP IP address>` to run big test of UDP
     - Use `./bigtest_rc.sh <RMI IP address>` to run big test of RMI
+    
+# Github link
+[hanfeiyu/genericNode](https://github.com/hanfeiyu/genericNode)
 
