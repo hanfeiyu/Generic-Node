@@ -65,14 +65,5 @@ client and ts/us/rmis servers
     
 # Github link
 [hanfeiyu/genericNode](https://github.com/hanfeiyu/genericNode)
-=======
->>>>>>> e163396cb993884987d0112071841de81217b694
 
-  - In the client terminal:
-    - Use `./bigtest_tc.sh <TCP IP address>` to run big test of TCP
-    - Use `./bigtest_uc.sh <UDP IP address>` to run big test of UDP
-    - Use `./bigtest_rc.sh <RMI IP address>` to run big test of RMI
-    
-# Github link
-[hanfeiyu/genericNode](https://github.com/hanfeiyu/genericNode)
 
