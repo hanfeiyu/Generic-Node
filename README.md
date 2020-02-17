@@ -18,7 +18,7 @@
 >Ubuntu 18.04 on VirtualBox
 
 # Architecture
-. 
+.    
 ├── README.md 
 ├── a1_dockerfiles 
 │   ├── docker_client 
