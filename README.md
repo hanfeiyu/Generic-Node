@@ -18,21 +18,21 @@
   - Ubuntu 18.04 on VirtualBox
 
 # Architecture
-.<br />
-├── README.md<br />
-├── a1_dockerfiles<br />
-│   ├── docker_client<br /> 
-│   └── docker_server<br />
-├── config.sh<br />
-├── tcss558_assignment_1<br />
-│   ├── bin<br />
-│   ├── localTest<br />
-│   ├── pom.xml<br />
-│   ├── src<br />
-│   └── target<br />
-└── tcss558_assignment_1_performance.pdf<br />
+.  
+├── README.md  
+├── a1_dockerfiles  
+│   ├── docker_client  
+│   └── docker_server  
+├── config.sh  
+├── tcss558_assignment_1  
+│   ├── bin  
+│   ├── localTest  
+│   ├── pom.xml  
+│   ├── src  
+│   └── target  
+└── tcss558_assignment_1_performance.pdf  
 
-8 directories, 4 files<br />
+8 directories, 4 files  
 
 # Usage
   - Simply run `./config.sh` to start testing
