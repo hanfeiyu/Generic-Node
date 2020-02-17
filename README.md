@@ -24,15 +24,14 @@
 │   ├── docker_client  
 │   └── docker_server  
 ├── config.sh  
-├── tcss558_assignment_1  
-│   ├── bin  
-│   ├── localTest  
-│   ├── pom.xml  
-│   ├── src  
-│   └── target  
-└── tcss558_assignment_1_performance.pdf  
+└── tcss558_assignment_1  
+    ├── bin  
+    ├── localTest  
+    ├── pom.xml  
+    ├── src  
+    └── target  
 
-8 directories, 4 files  
+8 directories, 3 files  
 
 # Usage
   - Simply run `./config.sh` to start testing
@@ -62,7 +61,7 @@ client and ts/us/rmis servers
     - Use `./bigtest_tc.sh <TCP IP address>` to run big test of TCP
     - Use `./bigtest_uc.sh <UDP IP address>` to run big test of UDP
     - Use `./bigtest_rc.sh <RMI IP address>` to run big test of RMI
-    
+
 # Github link
 [hanfeiyu/genericNode](https://github.com/hanfeiyu/genericNode)
 
