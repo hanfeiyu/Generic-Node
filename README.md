@@ -57,7 +57,6 @@ client and ts/us/rmis servers
 
   - In each server terminal:
     - Use `ifconfig` to obtain IP address
-<<<<<<< HEAD
 
   - In the client terminal:
     - Use `./bigtest_tc.sh <TCP IP address>` to run big test of TCP
