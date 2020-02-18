@@ -3,7 +3,7 @@
   - Java
 
 ## Language version
-  - java 11.0.6 2020-01-14 LTS
+  - Java 11.0.6 2020-01-14 LTS
 
 ## IDE
   - Eclipse 2019-12
