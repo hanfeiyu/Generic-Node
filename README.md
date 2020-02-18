@@ -49,7 +49,7 @@ and 3 terminals(tab) for ts/us/rmis servers
     - Use `./bigtest_rc.sh <RMI IP address>` to run big test of RMI
 
 ## For other OSs
-  - After the configuration finished, you should have 4 containers runing for
+  - After the configuration finished, you should have 4 containers running for
 client and ts/us/rmis servers
 
   - Open each with `sudo docker exec -it <Container ID> bash`
