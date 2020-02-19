@@ -63,6 +63,6 @@ client and ts/us/rmis servers
     - Use `./bigtest_rc.sh <RMI IP address>` to run big test of RMI
 
 # Github link
-[hanfeiyu/genericNode](https://github.com/hanfeiyu/genericNode)
+[hanfeiyu/generic-node](https://github.com/hanfeiyu/genericNode)
 
 
