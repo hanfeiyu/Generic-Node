@@ -1,30 +1,58 @@
 package genericNode;
 
+import java.net.MalformedURLException;
+import java.rmi.Naming;
+import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
+import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.Hashtable;
 import java.util.Set;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.FutureTask;
+
 
 public class StoreService extends UnicastRemoteObject implements InterfaceStoreService {
 	
-	/**
-	 * 
-	 */
+	// Server thread
+	public class StoreServiceThread implements Callable<String> {
+		
+		private String operationInfo = null;
+		
+		public StoreServiceThread(String operationInfo) {
+			this.operationInfo = operationInfo;
+		}
+		
+		@Override
+		public String call() throws Exception {
+			return operate(operationInfo);
+		}
+	}
+	
+	// Serial version UID
 	private static final long serialVersionUID = -853230389874314930L;
-	private static boolean isShutDown = false;
+	
+	// Connection to server central database
 	private static Hashtable<String, String> store = Server.getStore();
 	
-	protected StoreService() throws RemoteException {
+	// RMI address
+	private String rmiAddr = null;
+	
+	// RMI registry
+	private Registry registry = null;
+	
+	
+	// Store service constructor
+	protected StoreService(String rmiAddr, Registry registry) throws RemoteException {
 		super();
+		this.rmiAddr = rmiAddr;
+		this.registry = registry;
 	}
-	
-	public static boolean getIsShutDown () {
-		return isShutDown;
-	}
-	
-	@Override
+
+	// Put function
 	public String put(String key, String value) throws RemoteException {
-		String putResponse;
+		String putResponse = null;
 		
 		if (store.containsKey(key)) {
 			putResponse = "Server response: key=" + key + " already exists, please try again with a new key";		
@@ -35,10 +63,10 @@ public class StoreService extends UnicastRemoteObject implements InterfaceStoreS
 		
 		return putResponse;
 	}
-
-	@Override
+	
+	// Get function
 	public String get(String key) throws RemoteException {
-		String getResponse;
+		String getResponse = null;
 		
 		if (store.containsKey(key)) {
 			String value = store.get(key);
@@ -49,10 +77,10 @@ public class StoreService extends UnicastRemoteObject implements InterfaceStoreS
 		
 		return getResponse;
 	}
-
-	@Override
+	
+	// Delete function
 	public String del(String key) throws RemoteException {
-		String delResponse;
+		String delResponse = null;
 		
 		if (store.containsKey(key)) {
 			store.remove(key);
@@ -63,10 +91,10 @@ public class StoreService extends UnicastRemoteObject implements InterfaceStoreS
 		
 		return delResponse;
 	}
-
-	@Override
+	
+	// Store function
 	public String store() throws RemoteException {
-		String storeResponse;
+		String storeResponse = null;
 		
 		if (store.isEmpty()) {
 			storeResponse = "Server response: store is empty";
@@ -78,22 +106,24 @@ public class StoreService extends UnicastRemoteObject implements InterfaceStoreS
 				sb.append("{key=" + key + ", value=" + store.get(key) + "} ");
 			}
 			
-			storeResponse = sb.toString();
+			if (sb.toString().getBytes().length > 65000) {
+				byte[] storeByte = sb.toString().getBytes();
+				byte[] storeByteTrimmed = new byte[65000];
+						
+				for (int i=0; i<65000; i++) {		
+					storeByteTrimmed[i] = storeByte[i];
+				}
+				
+				storeResponse = storeByteTrimmed.toString();
+			} else {
+				storeResponse = sb.toString();
+			}
 		}
 		
 		return storeResponse;
 	}
-
-	@Override
-	public String exit() throws RemoteException {
-		String exitResponse;
-		
-		isShutDown = true;
-		exitResponse = "Server response: See you again!";
-		return exitResponse;
-	}
-
-	@Override
+	
+	// Operation abstraction function 
 	public String operate(String operationInfo) throws RemoteException {
 		String response = null;
 		String operationInfoSplit[] = operationInfo.split(" ");
@@ -118,5 +148,40 @@ public class StoreService extends UnicastRemoteObject implements InterfaceStoreS
 		
 		return response;
 	}
+	
+	// Exit function for RMI
+	public String exit() throws RemoteException { 
+		String exitResponse;
+
+		try {
+			Naming.unbind(rmiAddr);
+			UnicastRemoteObject.unexportObject(registry, true);
+			
+		} catch (RemoteException | MalformedURLException | NotBoundException e) {
+			e.printStackTrace();
+		}
+		
+		exitResponse = "Server response: See you again!";
+		return exitResponse;
+	}
+
+	@Override
+	public String threading(String operationInfo) throws RemoteException {
+		StoreServiceThread serverThread = new StoreServiceThread(operationInfo);
+        FutureTask<String> futureTask = new FutureTask<String>(serverThread);
+        Thread thread = new Thread(futureTask);
+        thread.start();
+
+        String rmiResponse = null;
+		try {
+			rmiResponse = futureTask.get();
+		
+		} catch (InterruptedException | ExecutionException e) {
+			e.printStackTrace();
+		}
+		
+		return rmiResponse;
+		
+	} 
 	
 }

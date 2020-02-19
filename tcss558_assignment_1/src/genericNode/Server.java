@@ -2,9 +2,26 @@ package genericNode;
 
 import java.util.Hashtable;
 import java.util.Set;
+import java.util.concurrent.Callable;
 
 
 public abstract class Server {
+	
+	// Server thread
+	public class ServerThread implements Callable<String> {
+		
+		private String operationInfo = null;
+		
+		public ServerThread(String operationInfo) {
+			this.operationInfo = operationInfo;
+		}
+		
+		@Override
+		public String call() throws Exception {
+			return operate(operationInfo);
+		}
+	}
+	
 	
 	// Central database
 	private static Hashtable<String, String> store = new Hashtable<String, String>();

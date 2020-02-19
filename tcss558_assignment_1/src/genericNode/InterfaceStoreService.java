@@ -6,6 +6,8 @@ import java.rmi.RemoteException;
 
 public interface InterfaceStoreService extends Remote {
 	
+	public abstract class StoreServiceThread {};
+	
 	public String put(String key, String value) throws RemoteException;
 	
 	public String get(String key) throws RemoteException;
@@ -17,4 +19,6 @@ public interface InterfaceStoreService extends Remote {
 	public String exit() throws RemoteException;
 	
 	public String operate(String operationInfo) throws RemoteException;
+
+	public String threading(String operationInfo) throws RemoteException;
 }

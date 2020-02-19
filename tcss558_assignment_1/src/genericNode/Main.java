@@ -126,15 +126,14 @@ public class Main {
 			
 			if (args[0].equals("tc")) {
 				TCPClient tcpClient = new TCPClient(ipAddr, portNum, operationInfo);
-				
 				tcpClient.requestAndListen();
+				
 			} else if (args[0].equals("uc")) {
 				UDPClient udpClient = new UDPClient(ipAddr, portNum, operationInfo);
-				
 				udpClient.requestAndListen();
+				
 			} else if (args[0].equals("rmic")) {
 				RMIClient rmiClient = new RMIClient(ipAddr, portNum, operationInfo);
-				
 				rmiClient.requestAndListen();
 			}
 		}

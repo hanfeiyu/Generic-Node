@@ -6,6 +6,8 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.FutureTask;
 
 
 public class TCPServer extends Server {
@@ -34,10 +36,21 @@ public class TCPServer extends Server {
 		        // Write response
 		        PrintWriter os = new PrintWriter(socket.getOutputStream());
 		        
-		    	// Analyze message and execute it
-		        String response = operate(operationInfo);
+		    	// Analyze message and execute it in parallel
+		        ServerThread serverThread = new ServerThread(operationInfo);
+		        FutureTask<String> futureTask = new FutureTask<String>(serverThread);
+		        Thread thread = new Thread(futureTask);
+		        thread.start();
 		        
-		        // Reply to client
+		        String response = null;
+				try {
+					response = futureTask.get();
+				
+				} catch (InterruptedException | ExecutionException e) {
+					e.printStackTrace();
+				}
+				
+				// Reply to client
 	        	os.println(response);
 	        	os.flush();
 		        
