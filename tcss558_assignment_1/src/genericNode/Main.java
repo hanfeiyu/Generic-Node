@@ -72,11 +72,16 @@ public class Main {
 			
 			int tcpPortNum = Integer.parseInt(args[1]);
 			int udpPortNum = Integer.parseInt(args[2]);
-			TCPServer tcpServer = new TCPServer(tcpPortNum);
-			UDPServer udpServer = new UDPServer(udpPortNum);
 			
-			tcpServer.listenAndExecute();
-			udpServer.listenAndExecute();
+			new Thread(() -> {
+				TCPServer tcpServer = new TCPServer(tcpPortNum);
+				tcpServer.listenAndExecute();
+			}).start();
+
+			new Thread(() -> {
+				UDPServer udpServer = new UDPServer(udpPortNum);
+				udpServer.listenAndExecute();
+			}).start();
 			
 		} else if (args[0].equals("alls")) {
 			if (args.length != 4) {
@@ -86,13 +91,21 @@ public class Main {
 			int tcpPortNum = Integer.parseInt(args[1]);
 			int udpPortNum = Integer.parseInt(args[2]);
 			int rmiPortNum = Integer.parseInt(args[3]);
-			TCPServer tcpServer = new TCPServer(tcpPortNum);
-			UDPServer udpServer = new UDPServer(udpPortNum);
-			RMIServer rmiServer = new RMIServer(rmiPortNum);
 			
-			tcpServer.listenAndExecute();
-			udpServer.listenAndExecute();
-			rmiServer.listenAndExecute();
+			new Thread(() -> {
+				TCPServer tcpServer = new TCPServer(tcpPortNum);
+				tcpServer.listenAndExecute();
+			}).start();
+			
+			new Thread(()->{
+				UDPServer udpServer = new UDPServer(udpPortNum);
+				udpServer.listenAndExecute();
+			}).start();
+			
+			new Thread(() -> {
+				RMIServer rmiServer = new RMIServer(rmiPortNum);
+				rmiServer.listenAndExecute();
+			}).start();		
 			
 		} else {
 			if (args[3].equals("put") && args.length!=6) {

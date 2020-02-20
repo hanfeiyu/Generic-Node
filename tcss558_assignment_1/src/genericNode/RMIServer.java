@@ -41,14 +41,10 @@ public class RMIServer extends Server {
 
 			// Bind and publish service to registry
 			Naming.rebind(rmiAddr, storeService);
-			
-			// Otherwise exits
-			//System.exit(0);
-			
+
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
-
 	
 }

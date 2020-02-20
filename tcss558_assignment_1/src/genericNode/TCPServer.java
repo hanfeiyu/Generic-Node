@@ -11,7 +11,7 @@ import java.util.concurrent.FutureTask;
 
 
 public class TCPServer extends Server {
-
+	
 	public TCPServer(int portNum) {
 		super(portNum);
 	}
@@ -37,7 +37,7 @@ public class TCPServer extends Server {
 		        PrintWriter os = new PrintWriter(socket.getOutputStream());
 		        
 		    	// Analyze message and execute it in parallel
-		        ServerThread serverThread = new ServerThread(operationInfo);
+		        OperateThread serverThread = new OperateThread(operationInfo);
 		        FutureTask<String> futureTask = new FutureTask<String>(serverThread);
 		        Thread thread = new Thread(futureTask);
 		        thread.start();
@@ -65,9 +65,6 @@ public class TCPServer extends Server {
 		    
 		    // Close serverSocket
 		    serverSocket.close();
-		    
-		    // Exit
-		    System.exit(0);
 		    
 		} catch (IOException e) {
 			e.printStackTrace();

@@ -26,7 +26,7 @@ public class RMIClient extends Client {
 			}
 			
 			// Call store service
-			String response = storeService.operate(operationInfo);
+			String response = storeService.threading(operationInfo);
 
 			System.out.println(response);
 			

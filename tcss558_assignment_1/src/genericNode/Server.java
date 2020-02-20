@@ -7,12 +7,12 @@ import java.util.concurrent.Callable;
 
 public abstract class Server {
 	
-	// Server thread
-	public class ServerThread implements Callable<String> {
+	// Operate thread
+	public class OperateThread implements Callable<String> {
 		
 		private String operationInfo = null;
 		
-		public ServerThread(String operationInfo) {
+		public OperateThread(String operationInfo) {
 			this.operationInfo = operationInfo;
 		}
 		
@@ -21,13 +21,14 @@ public abstract class Server {
 			return operate(operationInfo);
 		}
 	}
-	
+
 	
 	// Central database
 	private static Hashtable<String, String> store = new Hashtable<String, String>();
 	
 	// Port number
 	protected int portNum = -1;
+	
 	
 	// Server constructor
 	public Server(int portNum) {

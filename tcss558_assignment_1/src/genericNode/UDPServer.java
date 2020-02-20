@@ -8,9 +8,8 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.FutureTask;
 
 
-
-public class UDPServer extends Server{
-
+public class UDPServer extends Server {
+	
 	public UDPServer(int portNum) {
 		super(portNum);
 	}
@@ -31,7 +30,7 @@ public class UDPServer extends Server{
 				String operationInfo = new String(requestByte, 0, requestPacket.getLength());
 				
 				// Execute the operation in parallel
-				ServerThread serverThread = new ServerThread(operationInfo);
+				OperateThread serverThread = new OperateThread(operationInfo);
 		        FutureTask<String> futureTask = new FutureTask<String>(serverThread);
 		        Thread thread = new Thread(futureTask);
 		        thread.start();
@@ -57,7 +56,7 @@ public class UDPServer extends Server{
 			}
 			
 			// Exit
-			System.exit(0);
+			//System.exit(0);
 			
 		} catch (IOException e) {
 			e.printStackTrace();
