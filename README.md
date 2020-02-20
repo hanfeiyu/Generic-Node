@@ -1,8 +1,5 @@
 # Devlopment Environment
-## Language
-  - Java
-
-## Language version
+## Language and version
   - Java 11.0.6 2020-01-14 LTS
 
 ## IDE
