@@ -54,9 +54,9 @@
     - Use `./bigtest_tc.sh <TCP IP address>` to run big test of TCP
     - Use `./bigtest_uc.sh <UDP IP address>` to run big test of UDP
     - Use `./bigtest_rc.sh <RMI IP address>` to run big test of RMI
-    - Use `./bigtest_tc_concurrency.sh <TCP IP address>` to run big concurrency test of TCP
-    - Use `./bigtest_uc_concurrency.sh <UDP IP address>` to run big concurrency test of UDP
-    - Use `./bigtest_rc_concurrency.sh <RMI IP address>` to run big concurrency test of RMI
+    - Use `./bigtest_tc_concurrency.sh <TCP IP address>` to run big concurrent test of TCP
+    - Use `./bigtest_uc_concurrency.sh <UDP IP address>` to run big concurrent test of UDP
+    - Use `./bigtest_rc_concurrency.sh <RMI IP address>` to run big concurrent test of RMI
 
 ## For other OSs
   - After the configuration finished, you should have 4 containers running for
@@ -71,9 +71,9 @@
     - Use `./bigtest_tc.sh <TCP IP address>` to run big test of TCP
     - Use `./bigtest_uc.sh <UDP IP address>` to run big test of UDP
     - Use `./bigtest_rc.sh <RMI IP address>` to run big test of RMI
-    - Use `./bigtest_tc_concurrency.sh <TCP IP address>` to run big concurrency test of TCP
-    - Use `./bigtest_uc_concurrency.sh <UDP IP address>` to run big concurrency test of UDP
-    - Use `./bigtest_rc_concurrency.sh <RMI IP address>` to run big concurrency test of RMI
+    - Use `./bigtest_tc_concurrency.sh <TCP IP address>` to run big concurrent test of TCP
+    - Use `./bigtest_uc_concurrency.sh <UDP IP address>` to run big concurrent test of UDP
+    - Use `./bigtest_rc_concurrency.sh <RMI IP address>` to run big concurrent test of RMI
 
 # Github link
 [hanfeiyu/generic-node](https://github.com/hanfeiyu/genericNode)
