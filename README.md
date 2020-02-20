@@ -41,7 +41,7 @@
     - Clean docker containers and images built from this assignment
 
 ## For Linux OS
-  - Execute `./config` to prepare testing
+  - Execute `./config.sh` to prepare testing
   - After the configuration finished, you should have 1 terminal(tab) for client
     and 3 terminals(tab) for ts/us/rmis servers
 
@@ -57,7 +57,7 @@
     - Use `./bigtest_rc_concurrency.sh <RMI IP address>` to run big concurrent test of RMI
 
 ## For other OSs
-  - Execute `./config` to prepare testing
+  - Execute `./config.sh` to prepare testing
   - After the configuration finished, you should have 4 containers running for
     client and ts/us/rmis servers
 
