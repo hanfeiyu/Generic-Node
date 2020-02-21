@@ -1,5 +1,5 @@
 # Java class ignore
-*.class
+#*.class
 
 # Package file ignore
 *.war
