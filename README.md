@@ -16,16 +16,16 @@
 
 # Architecture
 >.
->├── README.md
->├── a1_dockerfiles
->│   ├── docker_client 
->│   └── docker_server
->├── clean.sh
->├── config.sh
->└── tcss558_assignment_1
->    ├── localTest
->    ├── pom.xml
->    └── src
+>├── README.md  
+>├── a1_dockerfiles  
+>│   ├── docker_client   
+>│   └── docker_server  
+>├── clean.sh  
+>├── config.sh  
+>└── tcss558_assignment_1  
+>    ├── localTest  
+>    ├── pom.xml  
+>    └── src  
 
 6 directories, 4 files
 
