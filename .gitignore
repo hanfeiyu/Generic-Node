@@ -9,8 +9,8 @@
 *.rar
 
 # Maven ignore
-target/
-build/
+#target/
+#build/
 
 # Eclipse ignore 
 .settings/
