@@ -20,8 +20,8 @@
  - a1_dockerfiles
     - docker_client
     - docker_server
- - $\color{green}{clean.sh}$
- - $\color{green}{config.sh}$
+ - clean.sh
+ - config.sh
  - tcss558_assignment_1
     - localTest
     - pom.xml
