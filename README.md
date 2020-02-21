@@ -23,9 +23,9 @@
 ├── clean.sh  
 ├── config.sh  
 └── tcss558_assignment_1  
-    ├── localTest  
-    ├── pom.xml  
-    └── src  
+    ├── localTest
+    ├── pom.xml
+    └── src
   
 6 directories, 4 files
 
