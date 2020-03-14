@@ -74,6 +74,6 @@
     - Use `./bigtest_rc_concurrency.sh <RMI IP address>` to run big concurrent test of RMI
 
 # Github link
-[hanfeiyu/generic-node](https://github.com/hanfeiyu/genericNode)
+[hanfeiyu/Generic-Node](https://github.com/hanfeiyu/Generic-Node)
 
 
